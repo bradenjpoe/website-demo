@@ -11,18 +11,31 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-dark:  #0a0a0a;
-      --green-mid:   #141414;
-      --green-light: #242424;
-      --gold:        #bb0000;
-      --gold-light:  #d42020;
-      --gold-pale:   #fde8e8;
-      --cream:       #f5f5f5;
-      --cream-dark:  #e8e8e8;
-      --text-dark:   #1a1a1a;
-      --text-mid:    #4a4a4a;
-      --text-light:  #7a7a7a;
-      --white:       #ffffff;
+      /* ── Brand palette extracted directly from logos ── */
+      --black:        #0a0a0a;   /* dominant background */
+      --black-mid:    #141414;
+      --black-light:  #222222;
+      --scarlet:      #BB0000;   /* bright red — horse/jockey logo */
+      --scarlet-hover:#C8102E;   /* scarlet hover state */
+      --crimson:      #8B0000;   /* deep red — diamond interior */
+      --silver:       #8C8C8C;   /* gray — diamond border */
+      --silver-light: #B8B8B8;   /* lighter silver for subtle accents */
+      --silver-pale:  #F0F0F0;   /* near-white silver tint */
+      --scarlet-pale: #fde8e8;   /* very light scarlet for badges */
+      --cream:        #f5f5f5;
+      --cream-dark:   #e8e8e8;
+      --text-dark:    #1a1a1a;
+      --text-mid:     #4a4a4a;
+      --text-light:   #7a7a7a;
+      --white:        #ffffff;
+
+      /* ── Aliases so existing CSS vars keep working ── */
+      --green-dark:  var(--black);
+      --green-mid:   var(--black-mid);
+      --green-light: var(--black-light);
+      --gold:        var(--scarlet);
+      --gold-light:  var(--scarlet-hover);
+      --gold-pale:   var(--scarlet-pale);
     }
 
     html { scroll-behavior: smooth; }
@@ -254,22 +267,6 @@
       text-transform: uppercase;
       color: var(--text-light);
     }
-    .about-image-frame {
-      width: 100%;
-      aspect-ratio: 4/5;
-      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-light) 100%);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .about-image-frame::after {
-      content: '';
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(187,0,0,0.35);
-      pointer-events: none;
-    }
     .img-placeholder {
       color: rgba(255,255,255,0.18);
       font-family: 'Playfair Display', serif;
@@ -300,7 +297,7 @@
     .stats-bar-item {
       text-align: center;
       padding: 1rem 1.5rem;
-      border-right: 1px solid rgba(187,0,0,0.18);
+      border-right: 1px solid rgba(140,140,140,0.25);
     }
     .stats-bar-item:last-child { border-right: none; }
     .stats-bar-number {
@@ -327,7 +324,7 @@
     .mare-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
     .mare-name { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--green-dark); font-style: italic; }
     .mare-meta { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); }
-    .mare-divider { width: 40px; height: 1px; background: var(--gold); margin: 0.6rem 0 1rem; opacity: 0.5; }
+    .mare-divider { width: 40px; height: 1px; background: var(--silver); margin: 0.6rem 0 1rem; opacity: 0.6; }
     .mare-desc { color: var(--text-mid); line-height: 1.75; margin-bottom: 2rem; max-width: 700px; font-size: 0.97rem; }
     .progeny-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.4rem; }
     .progeny-card {
@@ -361,12 +358,12 @@
     .upcoming-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 2rem; }
     .upcoming-card {
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(187,0,0,0.18);
+      border: 1px solid rgba(140,140,140,0.22);
       padding: 2rem;
       position: relative;
       transition: background 0.2s, border-color 0.2s;
     }
-    .upcoming-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(187,0,0,0.45); }
+    .upcoming-card:hover { background: rgba(255,255,255,0.07); border-color: var(--scarlet); }
     .upcoming-tag {
       position: absolute;
       top: 1.1rem;
@@ -502,22 +499,95 @@
     .social-btn {
       width: 38px;
       height: 38px;
-      border: 1px solid rgba(187,0,0,0.28);
+      border: 1px solid rgba(140,140,140,0.4);
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       transition: background 0.2s, border-color 0.2s;
     }
-    .social-btn:hover { background: var(--gold); border-color: var(--gold); }
+    .social-btn:hover { background: var(--scarlet); border-color: var(--scarlet); }
     .social-btn svg { width: 15px; height: 15px; fill: rgba(255,255,255,0.6); transition: fill 0.2s; }
-    .social-btn:hover svg { fill: var(--green-dark); }
+    .social-btn:hover svg { fill: var(--white); }
     .footer-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 0.76rem;
       color: rgba(255,255,255,0.25);
+    }
+
+    /* ── LOGO ── */
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo-img { height: 38px; width: auto; display: block; }
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--scarlet);
+      letter-spacing: 0.04em;
+    }
+
+    /* Diamond P mark — inline SVG reusable element */
+    .diamond-p-hero {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(340px, 32vw);
+      opacity: 0.08;
+    }
+    .diamond-p-sm {
+      display: inline-block;
+      width: 28px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+    .diamond-p-ornament {
+      display: block;
+      width: 22px;
+      height: 30px;
+      margin: 0 auto;
+      opacity: 0.5;
+    }
+    .section-ornament {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    /* About image — white frame for logo display */
+    .about-image-frame {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+    }
+    .about-image-frame::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(140,140,140,0.2);
+      pointer-events: none;
+    }
+    .about-logo-img {
+      width: 100%;
+      height: auto;
+      max-width: 320px;
+      display: block;
+    }
+    .about-est {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--silver);
     }
 
     /* ── MOBILE ── */
@@ -557,7 +627,11 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">Poe Racing Stable LLC</a>
+  <a href="#hero" class="nav-logo">
+    <img src="./assets/logo-full.png" class="nav-logo-img" alt="Poe Racing Stable LLC"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+    <span class="nav-logo-text" style="display:none">Poe Racing Stable LLC</span>
+  </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#highlights">Highlights</a></li>
@@ -573,13 +647,22 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-pattern"></div>
-  <svg class="hero-horse" viewBox="0 0 420 370" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M358 22C336 10 314 16 298 32L280 54C263 48 246 44 230 51C214 58 203 72 198 88L186 112C174 108 158 105 144 114C130 123 123 139 121 155L112 182C96 176 78 180 64 191C50 202 43 221 43 240L40 318C40 334 47 348 58 358L70 365L82 357L84 316L90 272C96 281 105 288 117 290L121 342L128 358L140 360L150 351L150 304L158 271C172 274 188 269 199 260L206 292L210 336L216 356L230 358L239 348L232 298L235 268C249 261 260 249 264 236L271 263L279 312L282 344L296 350L305 339L298 288L296 256C307 244 312 229 309 214L318 198C331 194 342 185 348 173L360 148C372 144 381 136 386 125C395 110 393 92 384 78L374 60L380 38Z" fill="white"/>
-    <ellipse cx="372" cy="18" rx="10" ry="10" fill="white"/>
-    <path d="M300 46L322 38M322 38L342 26M342 26L358 18" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Diamond P watermark -->
+  <svg class="diamond-p-hero" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="50,0 100,70 50,140 0,70" fill="#8C8C8C"/>
+    <polygon points="50,11 89,70 50,129 11,70" fill="#8B0000"/>
+    <text x="50" y="93" text-anchor="middle" font-family="Georgia,serif" font-size="62" font-style="italic" font-weight="700" fill="#0a0a0a">P</text>
   </svg>
+
   <div class="hero-content">
-    <p class="hero-eyebrow">Established &middot; Boutique &middot; Thoroughbred</p>
+    <!-- Small Diamond P mark above eyebrow -->
+    <svg class="diamond-p-ornament" style="margin-bottom:1.4rem;opacity:0.7;" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <polygon points="50,0 100,70 50,140 0,70" fill="#8C8C8C"/>
+      <polygon points="50,11 89,70 50,129 11,70" fill="#8B0000"/>
+      <text x="50" y="93" text-anchor="middle" font-family="Georgia,serif" font-size="62" font-style="italic" font-weight="700" fill="#0a0a0a">P</text>
+    </svg>
+    <p class="hero-eyebrow">Established &middot; est. 2008 &middot; Thoroughbred</p>
     <h1 class="hero-title">Poe<br><em>Racing Stable</em> LLC</h1>
     <div class="hero-divider"></div>
     <p class="hero-tagline">A boutique thoroughbred breeding and ownership operation built on a singular philosophy — quality over quantity, patience over impulse, and a deep respect for the sport.</p>
@@ -626,12 +709,18 @@
       </div>
       <div class="about-image">
         <div class="about-image-frame">
-          <div class="img-placeholder">
-            <svg viewBox="0 0 80 60" width="72" style="display:block;margin:0 auto 0.8rem;opacity:0.5" fill="white" xmlns="http://www.w3.org/2000/svg">
-              <path d="M66 4C61 2 57 3 54 6L51 10C48 9 45 8 43 10C41 12 39 15 38 18L36 22C34 21 31 20 29 21C27 23 26 26 26 30L25 38C22 37 19 38 17 40C15 42 14 46 14 49L13 59L17 59L18 49L19 43C20 44 22 45 24 46L25 56L27 59L30 59L31 54L31 45C33 45 36 44 38 42L39 48L40 56L41 59L44 59L45 55L44 47L45 42C47 40 49 38 49 35L51 39L52 48L53 56L56 57L57 53L56 43L56 37C58 35 59 32 58 29L60 26C62 25 64 23 65 21C67 18 66 15 64 12L62 8L64 5Z"/>
+          <!-- Replace src with ./assets/logo-full.png once file is saved there -->
+          <img src="./assets/logo-full.png" class="about-logo-img" alt="Poe Racing Stable LLC"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;flex-direction:column;align-items:center;gap:1rem;">
+            <svg viewBox="0 0 100 140" width="60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polygon points="50,0 100,70 50,140 0,70" fill="#e8e8e8"/>
+              <polygon points="50,11 89,70 50,129 11,70" fill="#f0d0d0"/>
+              <text x="50" y="93" text-anchor="middle" font-family="Georgia,serif" font-size="62" font-style="italic" font-weight="700" fill="#ccc">P</text>
             </svg>
-            Photo Coming Soon
+            <span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:#bbb;">Logo Coming Soon</span>
           </div>
+          <span class="about-est">Est. 2008</span>
         </div>
         <div class="about-accent"></div>
       </div>
@@ -957,7 +1046,15 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#hero" class="nav-logo">Poe Racing Stable LLC</a>
+        <a href="#hero" class="nav-logo" style="margin-bottom:1rem;">
+          <!-- Diamond P mark -->
+          <svg class="diamond-p-sm" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="50,0 100,70 50,140 0,70" fill="#8C8C8C"/>
+            <polygon points="50,11 89,70 50,129 11,70" fill="#8B0000"/>
+            <text x="50" y="93" text-anchor="middle" font-family="Georgia,serif" font-size="62" font-style="italic" font-weight="700" fill="#0a0a0a">P</text>
+          </svg>
+          <span class="nav-logo-text" style="display:inline">Poe Racing Stable LLC</span>
+        </a>
         <p>A boutique thoroughbred breeding and ownership operation. Built on patience, guided by passion, and measured by the performance of great horses.</p>
         <div class="social-row">
           <!-- Instagram -->
