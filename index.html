@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ============================================================
+       EDIT: Page title (shows in browser tab and Google results)
+       ============================================================ -->
   <title>Poe Racing Stable LLC — Boutique Thoroughbred Breeding & Ownership</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +14,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* ── Brand palette extracted directly from logos ── */
+      /* ============================================================
+         EDIT: Brand colors — change hex values here to restyle the
+         entire site. Scarlet is the primary accent throughout.
+         ============================================================ */
       --black:        #0a0a0a;   /* dominant background */
       --black-mid:    #141414;
       --black-light:  #222222;
@@ -677,6 +683,11 @@
   </div>
 </section>
 
+<!-- ============================================================
+     ABOUT SECTION
+     EDIT: Update the three paragraphs and the four stat cards below.
+     Stat cards: change the large number/word and the label beneath it.
+     ============================================================ -->
 <!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
@@ -728,6 +739,11 @@
   </div>
 </section>
 
+<!-- ============================================================
+     STATS BAR
+     EDIT: Update the four credential callouts.
+     Each item has a large label (e.g. "Stakes") and a sublabel beneath.
+     ============================================================ -->
 <!-- STATS BAR -->
 <div id="stats-bar">
   <div class="stats-bar-inner">
@@ -750,6 +766,15 @@
   </div>
 </div>
 
+<!-- ============================================================
+     HIGHLIGHTS SECTION — MARES & PROGENY
+     EDIT: Each mare has her own block starting with <!-- Mare N: Name -->.
+     To add a new mare: copy an entire <!-- Mare N --> block
+     (from <div class="mare-block"> to the closing </div>) and
+     paste it directly above the closing </div></section> below.
+     To add a progeny card: copy one <div class="progeny-card"> block
+     and paste inside the <div class="progeny-grid"> of the right mare.
+     ============================================================ -->
 <!-- HIGHLIGHTS -->
 <section id="highlights">
   <div class="section-inner">
@@ -764,6 +789,7 @@
     <div class="mare-block">
       <div class="mare-header">
         <span class="mare-name">Take Charge Sue</span>
+        <!-- EDIT: "by Sire · Year · Color" e.g. "by Take Charge Indy · 2012 · Bay" -->
         <span class="mare-meta">by Sire &middot; Year &middot; Color</span>
       </div>
       <div class="mare-divider"></div>
@@ -803,6 +829,7 @@
     <div class="mare-block">
       <div class="mare-header">
         <span class="mare-name">Hedonism</span>
+        <!-- EDIT: "by Sire · Year · Color" -->
         <span class="mare-meta">by Sire &middot; Year &middot; Color</span>
       </div>
       <div class="mare-divider"></div>
@@ -837,6 +864,7 @@
     <div class="mare-block">
       <div class="mare-header">
         <span class="mare-name">Crafty Tigress</span>
+        <!-- EDIT: "by Sire · Year · Color" -->
         <span class="mare-meta">by Sire &middot; Year &middot; Color</span>
       </div>
       <div class="mare-divider"></div>
@@ -867,6 +895,7 @@
     <div class="mare-block">
       <div class="mare-header">
         <span class="mare-name">She's Simply Sweet</span>
+        <!-- EDIT: "by Sire · Year · Color" -->
         <span class="mare-meta">by Sire &middot; Year &middot; Color</span>
       </div>
       <div class="mare-divider"></div>
@@ -895,6 +924,43 @@
   </div>
 </section>
 
+    <!-- ============================================================
+         ADD NEW MARE HERE — copy the block below as a template:
+
+         <div class="mare-block">
+           <div class="mare-header">
+             <span class="mare-name">Mare Name</span>
+             <span class="mare-meta">by Sire · Year · Color</span>
+           </div>
+           <div class="mare-divider"></div>
+           <p class="mare-desc">Description of this mare.</p>
+           <div class="progeny-grid">
+
+             <div class="progeny-card">
+               <svg class="progeny-icon" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M33 2C30 1 28 1.5 27 3L25 5C23 4.5 22 4 21 5C20 5.5 19 7 18.5 8.5L17.5 10.5C16.5 10 15 9.8 14 10.5C13 11.2 12.5 13 12.5 14.5L12 18.5C10.5 18 9 18.2 8 19C7 19.8 6.5 21.5 6.5 23L6 29L8 29L8.5 24L9 20C9.5 21 10.5 22 11.5 22L12 27.5L13 29L14.5 29L15 26.5L15 22C16 22 17.5 21.5 18.5 20.5L19 23L19.5 27.5L20 29L21.5 29L22 26.5L21.5 22.5L22 20.5C23 19.5 24 18.5 24 17L25 19L25.5 24L26 27L27.5 27.5L28 25.5L27.5 21L27.5 18.5C28.5 17.5 29 16 28.5 14.5L30 12.5C31 12 32 11 32.5 10C33.5 8.5 33 7 32 5.5L30.5 3.5L31.5 2Z" fill="#242424"/></svg>
+               <div class="progeny-name">Horse Name</div>
+               <div class="progeny-year">20XX · Color &amp; Sex</div>
+               <div class="progeny-detail">Race detail or accomplishment.</div>
+               <span class="progeny-badge">Stakes Winner</span>
+             </div>
+
+           </div>
+         </div>
+
+         BADGE OPTIONS (copy the text inside progeny-badge):
+           Stakes Winner | Stakes Placed | Multiple Winner | Earner | In Training
+         ============================================================ -->
+
+<!-- ============================================================
+     UP & COMING SECTION
+     EDIT: Each horse/mare is a <div class="upcoming-card"> block.
+     TAG OPTIONS — replace the class on <span class="upcoming-tag">:
+       tag-racing  = orange "Racing Age" badge
+       tag-mare    = outlined "In Foal" badge
+       tag-foal    = subtle "Yearling" badge
+     To add a new card: copy any upcoming-card block and paste it
+     before the closing </div> of upcoming-grid below.
+     ============================================================ -->
 <!-- UP & COMING -->
 <section id="upcoming">
   <div class="section-inner">
@@ -952,19 +1018,29 @@
         </div>
       </div>
 
+      <!-- ADD NEW UPCOMING CARD HERE — copy a card block from above -->
     </div>
   </div>
 </section>
 
+<!-- ============================================================
+     GALLERY SECTION
+     EDIT: Replace each <div class="gallery-item"> placeholder with
+     a real image like: <img src="./assets/photo.jpg" style="width:100%;height:100%;object-fit:cover;">
+     To add more photos: copy a gallery-item div and paste inside
+     gallery-grid. The layout auto-adjusts.
+     ============================================================ -->
 <!-- GALLERY -->
 <section id="gallery">
   <div class="gallery-header">
     <p class="section-label">Photography</p>
     <h2 class="section-title">The <em>Gallery</em></h2>
     <div class="section-divider"></div>
+    <!-- EDIT: Update this note once photos are added -->
     <p class="gallery-note">Photos coming soon — follow us on Instagram for the latest from the barn, track, and farm.</p>
   </div>
   <div class="gallery-grid">
+    <!-- EDIT: Replace placeholder text with <img> tags pointing to your photos -->
     <div class="gallery-item"><span class="gallery-ph">Race Day</span></div>
     <div class="gallery-item"><span class="gallery-ph">At the Farm</span></div>
     <div class="gallery-item"><span class="gallery-ph">Morning Works</span></div>
@@ -974,6 +1050,12 @@
   </div>
 </section>
 
+<!-- ============================================================
+     CONTACT SECTION
+     EDIT: Update email address and phone number below.
+     The form shows a success message on submit — wire it to a real
+     backend (e.g. Formspree.io) when ready to receive emails.
+     ============================================================ -->
 <!-- CONTACT FORM -->
 <section id="contact-form">
   <div class="section-inner">
@@ -1041,6 +1123,11 @@
   </div>
 </section>
 
+<!-- ============================================================
+     FOOTER
+     EDIT: Update social media href="#" links with real URLs.
+     Update the copyright year if needed.
+     ============================================================ -->
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
