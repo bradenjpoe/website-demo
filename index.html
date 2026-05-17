@@ -1114,7 +1114,6 @@
           <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
         </div>
         <button type="submit" class="btn btn-solid" style="border:none;width:100%;font-size:0.78rem;">Send Message</button>
-        <div class="form-success" id="formSuccess">Thank you for reaching out. We'll be in touch shortly.</div>
       </form>
     </div>
   </div>
@@ -1208,21 +1207,6 @@
   hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-  // Contact form
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form    = document.getElementById('contactFormEl');
-    const success = document.getElementById('formSuccess');
-    form.style.opacity        = '0.5';
-    form.style.pointerEvents  = 'none';
-    success.style.display     = 'block';
-    setTimeout(() => {
-      form.reset();
-      form.style.opacity       = '1';
-      form.style.pointerEvents = 'auto';
-      success.style.display    = 'none';
-    }, 4500);
-  }
 </script>
 
 </body>
