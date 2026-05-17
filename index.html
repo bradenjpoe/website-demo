@@ -768,12 +768,12 @@
 
 <!-- ============================================================
      HIGHLIGHTS SECTION — MARES & PROGENY
-     EDIT: Each mare has her own block starting with <!-- Mare N: Name -->.
-     To add a new mare: copy an entire <!-- Mare N --> block
-     (from <div class="mare-block"> to the closing </div>) and
-     paste it directly above the closing </div></section> below.
-     To add a progeny card: copy one <div class="progeny-card"> block
-     and paste inside the <div class="progeny-grid"> of the right mare.
+     EDIT: Each mare has her own block marked with: Mare N: Name
+     To add a new mare: copy an entire mare-block div
+     (from the opening div to its closing div) and
+     paste it directly above the ADD NEW MARE HERE marker below.
+     To add a progeny card: copy one progeny-card div
+     and paste inside the progeny-grid of the right mare.
      ============================================================ -->
 <!-- HIGHLIGHTS -->
 <section id="highlights">
@@ -782,7 +782,7 @@
     <h2 class="section-title">Highlights &amp; <em>Notable Progeny</em></h2>
     <div class="section-divider"></div>
     <div class="highlights-intro">
-      <p>Our foundation mares have proven themselves as elite producers. Below are some of our most accomplished horses and the champions they've produced.</p>
+      <p>Our mares have proven themselves as elite producers over the years. Below are some of our most accomplished horses and the champions they've produced. <sup>*</sup> indicates a horse foaled prior to mare aqcuisiton.</p>
     </div>
 
     <!-- Mare 1: Take Charge Sue -->
@@ -790,37 +790,35 @@
       <div class="mare-header">
         <span class="mare-name">Take Charge Sue</span>
         <!-- EDIT: "by Sire · Year · Color" e.g. "by Take Charge Indy · 2012 · Bay" -->
-        <span class="mare-meta">by Sire &middot; Year &middot; Color</span>
+        <span class="mare-meta">by Take Charge Indy &middot; 2015 &middot; Bay</span>
       </div>
       <div class="mare-divider"></div>
-      <p class="mare-desc">A cornerstone of the Poe Racing Stable program, Take Charge Sue has distinguished herself as a consistent and high-quality producer. Her progeny carry her trademark combination of toughness, athleticism, and competitive fire.</p>
+      <p class="mare-desc">A recent addition to the Poe Racing Stable program, Take Charge Sue has distinguished herself as a high-quality producer. We are very excited for her latest foal by Complexity - a full sister to stakes winner Valtellina.</p>
       <div class="progeny-grid">
         <div class="progeny-card">
-          <svg class="progeny-icon" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M33 2C30 1 28 1.5 27 3L25 5C23 4.5 22 4 21 5C20 5.5 19 7 18.5 8.5L17.5 10.5C16.5 10 15 9.8 14 10.5C13 11.2 12.5 13 12.5 14.5L12 18.5C10.5 18 9 18.2 8 19C7 19.8 6.5 21.5 6.5 23L6 29L8 29L8.5 24L9 20C9.5 21 10.5 22 11.5 22L12 27.5L13 29L14.5 29L15 26.5L15 22C16 22 17.5 21.5 18.5 20.5L19 23L19.5 27.5L20 29L21.5 29L22 26.5L21.5 22.5L22 20.5C23 19.5 24 18.5 24 17L25 19L25.5 24L26 27L27.5 27.5L28 25.5L27.5 21L27.5 18.5C28.5 17.5 29 16 28.5 14.5L30 12.5C31 12 32 11 32.5 10C33.5 8.5 33 7 32 5.5L30.5 3.5L31.5 2Z" fill="#242424"/>
-          </svg>
-          <div class="progeny-name">Horse Name</div>
-          <div class="progeny-year">20XX &middot; Color &amp; Sex</div>
-          <div class="progeny-detail">Notable accomplishment or race detail.</div>
-          <span class="progeny-badge">Stakes Placed</span>
+          <img src="./assets/valtellina-the-empire-distaff.jpg" alt="Horse Name" class="progeny-icon" style="width:100%;height:180px;object-fit:cover;opacity:1;">
+          <div class="progeny-name">Valtellina<sup>*</sup> (NY)</div>
+          <div class="progeny-year">2022 &middot; F &middot; Complexity - Take Charge Sue by Take Charge Indy</div>
+          <div class="progeny-detail">Winner of the 2025 Empire Distaff Stakes (BAQ)</div>
+          <span class="progeny-badge">Stakes Winner</span>
         </div>
         <div class="progeny-card">
           <svg class="progeny-icon" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M33 2C30 1 28 1.5 27 3L25 5C23 4.5 22 4 21 5C20 5.5 19 7 18.5 8.5L17.5 10.5C16.5 10 15 9.8 14 10.5C13 11.2 12.5 13 12.5 14.5L12 18.5C10.5 18 9 18.2 8 19C7 19.8 6.5 21.5 6.5 23L6 29L8 29L8.5 24L9 20C9.5 21 10.5 22 11.5 22L12 27.5L13 29L14.5 29L15 26.5L15 22C16 22 17.5 21.5 18.5 20.5L19 23L19.5 27.5L20 29L21.5 29L22 26.5L21.5 22.5L22 20.5C23 19.5 24 18.5 24 17L25 19L25.5 24L26 27L27.5 27.5L28 25.5L27.5 21L27.5 18.5C28.5 17.5 29 16 28.5 14.5L30 12.5C31 12 32 11 32.5 10C33.5 8.5 33 7 32 5.5L30.5 3.5L31.5 2Z" fill="#242424"/>
           </svg>
-          <div class="progeny-name">Horse Name</div>
-          <div class="progeny-year">20XX &middot; Color &amp; Sex</div>
-          <div class="progeny-detail">Notable race record or breeding accomplishment.</div>
-          <span class="progeny-badge">Multiple Winner</span>
+          <div class="progeny-name">Unnamed Colt<sup>*</sup> (NY)</div>
+          <div class="progeny-year">2024 &middot; F &middot; Mind Control - Take Charge Sue by Take Charge Indy</div>
+          <div class="progeny-detail">Winner of the 2025 Empire Distaff Stakes (BAQ)</div>
+          <span class="progeny-badge">Stakes Winner</span>
         </div>
         <div class="progeny-card">
           <svg class="progeny-icon" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M33 2C30 1 28 1.5 27 3L25 5C23 4.5 22 4 21 5C20 5.5 19 7 18.5 8.5L17.5 10.5C16.5 10 15 9.8 14 10.5C13 11.2 12.5 13 12.5 14.5L12 18.5C10.5 18 9 18.2 8 19C7 19.8 6.5 21.5 6.5 23L6 29L8 29L8.5 24L9 20C9.5 21 10.5 22 11.5 22L12 27.5L13 29L14.5 29L15 26.5L15 22C16 22 17.5 21.5 18.5 20.5L19 23L19.5 27.5L20 29L21.5 29L22 26.5L21.5 22.5L22 20.5C23 19.5 24 18.5 24 17L25 19L25.5 24L26 27L27.5 27.5L28 25.5L27.5 21L27.5 18.5C28.5 17.5 29 16 28.5 14.5L30 12.5C31 12 32 11 32.5 10C33.5 8.5 33 7 32 5.5L30.5 3.5L31.5 2Z" fill="#242424"/>
           </svg>
-          <div class="progeny-name">Horse Name</div>
-          <div class="progeny-year">20XX &middot; Color &amp; Sex</div>
-          <div class="progeny-detail">Currently in training, showing exceptional promise.</div>
-          <span class="progeny-badge">In Training</span>
+          <div class="progeny-name">Valtellina<sup>*</sup> (NY)</div>
+          <div class="progeny-year">2022 &middot; F &middot; Complexity - Take Charge Sue by Take Charge Indy</div>
+          <div class="progeny-detail">Full Sister to Valtellina</div>
+          <!-- <span class="progeny-badge">Stakes Winner</span> -->
         </div>
       </div>
     </div>
