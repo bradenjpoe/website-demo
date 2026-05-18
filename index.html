@@ -675,11 +675,16 @@
       }
       .nav-links.open a { font-size: 1.2rem; }
       section { padding: 4rem 1.5rem; }
+      .section-inner { width: 100%; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-image { display: none; }
       .about-stats { grid-template-columns: 1fr 1fr; }
+      /* Stats bar: 2×2 grid on tablet, own horizontal padding */
+      #stats-bar { padding: 3rem 1.5rem; }
       .stats-bar-inner { grid-template-columns: 1fr 1fr; }
       .stats-bar-item:nth-child(2) { border-right: none; }
+      .stats-bar-item:nth-child(3) { border-right: 1px solid rgba(140,140,140,0.25); }
+      .stats-bar-number { font-size: 2rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .form-row { grid-template-columns: 1fr; }
       #gallery { padding: 4rem 1.5rem; }
@@ -687,6 +692,24 @@
       .gallery-item { grid-column: span 1 !important; height: 180px; }
       .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+    }
+
+    /* ── Extra-small phones (≤480px) ── */
+    @media (max-width: 480px) {
+      section { padding: 3rem 1rem; }
+      #stats-bar { padding: 2.5rem 1rem; }
+      /* Stack stats to single column on very small screens */
+      .stats-bar-inner { grid-template-columns: 1fr 1fr; }
+      .stats-bar-number { font-size: 1.7rem; }
+      /* Stack about-stats to single column */
+      .about-stats { grid-template-columns: 1fr; }
+      .stat-number { font-size: 1.8rem; }
+      /* Slightly smaller hero text */
+      .hero-title { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+      /* Banner wraps gracefully */
+      #announcement-banner { font-size: 0.82rem; padding: 0.6rem 2.5rem 0.6rem 1rem; }
+      /* Mare name scales down */
+      .mare-name { font-size: 1.4rem; }
     }
   </style>
 </head>
