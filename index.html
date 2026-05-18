@@ -53,6 +53,52 @@
       overflow-x: hidden;
     }
 
+    /* ── ANNOUNCEMENT BANNER ── */
+    /* ============================================================
+       EDIT: To change the banner message, find <div id="announcement-banner">
+       in the HTML and update the text inside the <span>.
+       To hide the banner entirely, set display:none on that div.
+       ============================================================ */
+    #announcement-banner {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 400;
+      background: var(--scarlet);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.6rem 3rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-align: center;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+    #announcement-banner.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .banner-icon { font-size: 1.1rem; }
+    .banner-close {
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.75);
+      font-size: 1.3rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.2rem 0.4rem;
+      transition: color 0.2s;
+    }
+    .banner-close:hover { color: var(--white); }
+
     /* ── NAV ── */
     nav {
       position: fixed;
@@ -646,6 +692,17 @@
 </head>
 <body>
 
+<!-- ============================================================
+     ANNOUNCEMENT BANNER
+     Edit the <span> text below to change the message.
+     To remove the banner, delete this entire block or add style="display:none".
+     ============================================================ -->
+<div id="announcement-banner">
+  <span class="banner-icon">🏆</span>
+  <span>BREAKING NEWS: Speaker's Corner (Hedonism × Into Mischief) sells for <strong>$650,000</strong> at auction — congratulations to the buyer!</span>
+  <button class="banner-close" onclick="dismissBanner()" aria-label="Dismiss">&times;</button>
+</div>
+
 <!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">
@@ -1226,6 +1283,27 @@
 <script>
   // Nav scroll effect
   const navbar = document.getElementById('navbar');
+
+  // ── Announcement banner dismiss ──
+  const banner = document.getElementById('announcement-banner');
+
+  function dismissBanner() {
+    banner.classList.add('hidden');
+    // Slide nav back to top once banner is gone
+    setTimeout(() => {
+      banner.style.display = 'none';
+      navbar.style.top = '0';
+    }, 380);
+  }
+
+  // Offset the nav below the banner on load
+  function updateNavOffset() {
+    if (banner && !banner.classList.contains('hidden')) {
+      navbar.style.top = banner.offsetHeight + 'px';
+    }
+  }
+  updateNavOffset();
+  window.addEventListener('resize', updateNavOffset);
   const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
   window.addEventListener('scroll', onScroll);
   onScroll();
